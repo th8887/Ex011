@@ -43,19 +43,19 @@ public class MainActivity extends AppCompatActivity {
             a = Double.parseDouble(s1);
             b = Double.parseDouble(s2);
             c = Double.parseDouble(s3);
-            if (a == 1)
-                wv.loadUrl("https://www.google.com/search?q=x%5E2%2B"+b+"*x"+c+"&oq=x%5E2&aqs=chrome.0.69i59l2j69i57j0l5.3888j0j7&sourceid=chrome&ie=UTF-8");
-            if (a>0)
-                if (c>0)
-                    wv.loadUrl("https://www.google.com/search?sxsrf=ALeKk02ib-jVvetky8xNaUimiLZdsY3P0g%3A1587972763862&ei=m4qmXtSONMOVkwWk87mQDQ&q="+a+"*x%5E2%2B"+b+"*x%2B"+c+"&oq="+a+"*x%5E2%2B"+b+"*x%2B"+c+"&gs_lcp=CgZwc3ktYWIQAzoECCMQJzoGCAAQBxAeOgcIIxDqAhAnOgQIABBDOgIIADoFCAAQgwE6BAgAEB46BggAEAgQHlDDE1ijvAFg1cEBaAJwAHgAgAHFAogB1xmSAQgwLjE1LjMuMZgBAKABAaoBB2d3cy13aXqwAQo&sclient=psy-ab&ved=0ahUKEwiUyILEi4jpAhXDyqQKHaR5DtIQ4dUDCAw&uact=5");
+            if (a == 0)
+                Toast.makeText(this, "you cant enter 0, please enter another number", Toast.LENGTH_SHORT).show();
+            else {
+                if (a > 0)
+                    if (c > 0)
+                        wv.loadUrl("https://www.google.com/search?sxsrf=ALeKk02ib-jVvetky8xNaUimiLZdsY3P0g%3A1587972763862&ei=m4qmXtSONMOVkwWk87mQDQ&q=" + a + "*x%5E2%2B" + b + "*x%2B" + c + "&oq=" + a + "*x%5E2%2B" + b + "*x%2B" + c + "&gs_lcp=CgZwc3ktYWIQAzoECCMQJzoGCAAQBxAeOgcIIxDqAhAnOgQIABBDOgIIADoFCAAQgwE6BAgAEB46BggAEAgQHlDDE1ijvAFg1cEBaAJwAHgAgAHFAogB1xmSAQgwLjE1LjMuMZgBAKABAaoBB2d3cy13aXqwAQo&sclient=psy-ab&ved=0ahUKEwiUyILEi4jpAhXDyqQKHaR5DtIQ4dUDCAw&uact=5");
+                    else
+                        wv.loadUrl("https://www.google.com/search?sxsrf=ALeKk02WW9HC-sasb3XTpiH3OpL1CTT79A:1587903014796&q=" + a + "*x%5E2%2B" + b + "x" + c + "&spell=1&sa=X&ved=2ahUKEwj8v4nZh4bpAhUTuHEKHdKLDnYQBSgAegQIBxAq&biw=1280&bih=578");
+                else if (c > 0)
+                    wv.loadUrl("https://www.google.com/search?sxsrf=ALeKk0069_JmTOT7-bp_Wb8YPO1AvzKRHQ%3A1587972789496&ei=tYqmXsDhHZC8kwXvmqagCw&q=" + a + "*x%5E2%2B" + b + "*x%2B" + c + "&oq=" + a + "*x%5E2%2B" + b + "*x%2B" + c + "&gs_lcp=CgZwc3ktYWIQAzoHCCMQ6gIQJ1C_rskBWKfkygFgk-bKAWgBcAB4AYABpgKIAbcEkgEDMi0ymAEMoAEBqgEHZ3dzLXdperABCg&sclient=psy-ab&ved=0ahUKEwiAkJ_Qi4jpAhUQ3qQKHW-NCbQQ4dUDCAw&uact=5");
                 else
-                    wv.loadUrl("https://www.google.com/search?sxsrf=ALeKk02WW9HC-sasb3XTpiH3OpL1CTT79A:1587903014796&q="+a+"*x%5E2%2B"+b+"x"+c+"&spell=1&sa=X&ved=2ahUKEwj8v4nZh4bpAhUTuHEKHdKLDnYQBSgAegQIBxAq&biw=1280&bih=578");
-            else
-                if (c>0)
-                    wv.loadUrl("https://www.google.com/search?sxsrf=ALeKk0069_JmTOT7-bp_Wb8YPO1AvzKRHQ%3A1587972789496&ei=tYqmXsDhHZC8kwXvmqagCw&q="+a+"*x%5E2%2B"+b+"*x%2B"+c+"&oq="+a+"*x%5E2%2B"+b+"*x%2B"+c+"&gs_lcp=CgZwc3ktYWIQAzoHCCMQ6gIQJ1C_rskBWKfkygFgk-bKAWgBcAB4AYABpgKIAbcEkgEDMi0ymAEMoAEBqgEHZ3dzLXdperABCg&sclient=psy-ab&ved=0ahUKEwiAkJ_Qi4jpAhUQ3qQKHW-NCbQQ4dUDCAw&uact=5");
-                else
-                    wv.loadUrl("https://www.google.com/search?sxsrf=ALeKk023TCnPMU0DWP3yMJww32TBeo9PYg%3A1587829239789&ei=91mkXrXZL8ODsAeu-bLoDQ&q="+a+"*x%5E2%2B"+b+"*x"+c+"&oq=-2*x%5E2%2B4*x-16&gs_lcp=CgZwc3ktYWIQAzoHCCMQ6gIQJzoCCABQ0cUEWN6nBWD2sAVoAXAAeACAAaIBiAHQD5IBBDAuMTSYAQCgAQGqAQdnd3Mtd2l6sAEK&sclient=psy-ab&ved=0ahUKEwj1sLTu9IPpAhXDAewKHa68DN0Q4dUDCAw&uact=5");
-
+                    wv.loadUrl("https://www.google.com/search?sxsrf=ALeKk023TCnPMU0DWP3yMJww32TBeo9PYg%3A1587829239789&ei=91mkXrXZL8ODsAeu-bLoDQ&q=" + a + "*x%5E2%2B" + b + "*x" + c + "&oq=-2*x%5E2%2B4*x-16&gs_lcp=CgZwc3ktYWIQAzoHCCMQ6gIQJzoCCABQ0cUEWN6nBWD2sAVoAXAAeACAAaIBiAHQD5IBBDAuMTSYAQCgAQGqAQdnd3Mtd2l6sAEK&sclient=psy-ab&ved=0ahUKEwj1sLTu9IPpAhXDAewKHa68DN0Q4dUDCAw&uact=5");
+            }
         }
     }
 
@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         et1.setText("");
         et2.setText("");
         et3.setText("");
+        wv.loadUrl("");
     }
 
     private class MyWebViewClient extends WebViewClient {
